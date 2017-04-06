@@ -9,3 +9,4 @@ $RECYCLE.BIN/
 *.msp
 *.lnk
 node_modules
+public_html

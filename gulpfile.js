@@ -46,7 +46,7 @@ gulp.task('sass', function(){
 //Watch for changes
 gulp.task('watch', ['browserSync', 'sass'], function (){
   gulp.watch('app/scss/**/*.scss', ['sass']);
-  gulp.watch('app/**/*.php', browserSync.reload);
+  gulp.watch(source_php, browserSync.reload);
   gulp.watch('app/js/**/*.js', browserSync.reload);
 });
 
@@ -59,7 +59,7 @@ gulp.task('browserSync', function() {
 
 //Concat and minify js and css
 gulp.task('useref', function(){
-  return gulp.src('app/*.html')
+  return gulp.src(source_php)
     .pipe(useref())
     //Minify js files
     .pipe(gulpIf('*.js', uglify()))
@@ -74,18 +74,18 @@ gulp.task('images', function() {
   .pipe(cache(imagemin({
     //Options for images proccesing
   })))
-  .pipe(gulp.dest('dist/images'))
+  .pipe(gulp.dest(destination + '/images'))
 });
 
 //Copy fonts
 gulp.task('fonts', function() {
   return gulp.src('app/fonts/**/*')
-  .pipe(gulp.dest('dist/fonts'))
+  .pipe(gulp.dest(destination + '/fonts'))
 });
 
 //Remove dist folder
 gulp.task('remove:dist', function(){
-  return del.sync('dist');
+  return del.sync(destination);
 });
 
 //Remove cached images
