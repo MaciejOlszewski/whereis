@@ -1,6 +1,6 @@
 <?php
 
-$config = parse_ini_file('../credentials/credentials.ini');
+$config = parse_ini_file('../../credentials/credentials.ini');
 
 
 $connection = mysqli_connect($config['host'], $config['user'], $config['pass'], $config['db']);
