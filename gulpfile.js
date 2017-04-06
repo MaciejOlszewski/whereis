@@ -12,20 +12,30 @@ var runSequence = require('run-sequence');
 var autoprefixer  = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var devip = require('dev-ip');
-
-
+var _    = require('lodash');
 
 //--------------------
 // dev variables
 //--------------------
 
 var source_php = 'app/**/*.php';
-var destination = 'public_html'
+var destination = 'public_html';
 
 
 
 //--------------------
 
+gulp.task('copy-assets', function() {
+    var assets = {
+        js: [
+            './node_modules/bootstrap/dist/js/bootstrap.js'
+        ],
+        scss: ['./node_modules/bootstrap/dist/css/bootstrap.css']
+    };
+    _(assets).forEach(function (assets, type) {
+       gulp.src(assets).pipe(gulp.dest('./app/'+type+'/lib'));
+    });
+});
 
 //Compile Sass
 gulp.task('sass', function(){
