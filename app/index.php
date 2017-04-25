@@ -32,26 +32,10 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 
+include_once("head.php");
 ?>
-  <head>
-    <meta charset="UTF-8">
-    <title>Where is ?</title>
 
 
-    <!--build:css css/styles.min.css-->
-    <link rel="stylesheet" href="./scss/lib/bootstrap.css">
-    <link rel="stylesheet" href="./css/style.css" media="screen" title="no title">
-    <!--endbuild-->
-
-    <!--build:js js/main.min.js -->
-    <script type="text/javascript" src="./js/lib/bootstrap.js"></script>
-    <script src="js/test.js"></script>
-    <!-- endbuild -->
-
-
-
-
-  </head>
   <body>
 
 <div class="container">
@@ -59,16 +43,24 @@ if (mysqli_num_rows($result) > 0) {
   <div class="row">
     <div class="col-xs-12">
 
-    <h1>Where is ?</h1>
-    <p class="data">
-      Last position posted time: <?php echo gmdate('r', $time);?><br>
-      Location accurancy: <?php echo $acc ?> meters <br>
-      Battery: <?php echo $battery ?>%
-    </p>
-    <div id="map">
+      <h1>Where is ?</h1>
+      <p class="data">
+        Last position posted time: <?php echo gmdate('r', $time);?><br>
+        Location accurancy: <?php echo $acc ?> meters <br>
+        Battery: <?php echo $battery ?>%
+      </p>
+      </div>
+    <div class="col-xs-12">
+      <a class="btn btn-lg btn-primary btn-block btn-logout" href="logout.php">Logout</a>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-xs-12" id="map">
 
 
 
+
+      </div>
 
     </div>
     <script>
