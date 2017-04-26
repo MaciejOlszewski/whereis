@@ -18,7 +18,11 @@ if (!empty($_POST['login']) && !empty($_POST['password'])){
 
   }
   else {
-    echo '<span class="label label-warning warning">Wrong login or password</span>';
+    echo <<<END
+    <div class="alert alert-warning alert-password text-center">
+      <b>Wrong login or password!</b>
+    </div>
+END;
   }
 }
 
@@ -42,7 +46,7 @@ include_once("head.php");
   <body>
 <div class="container">
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-xs-12 col-md-4 col-md-offset-4">
     <h2 class="text-center">Sign in</h2>
 
 

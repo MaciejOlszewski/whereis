@@ -50,7 +50,7 @@ include_once("head.php");
         Battery: <?php echo $battery ?>%
       </p>
       </div>
-    <div class="col-xs-12">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
       <a class="btn btn-lg btn-primary btn-block btn-logout" href="logout.php">Logout</a>
     </div>
   </div>
@@ -63,6 +63,9 @@ include_once("head.php");
       </div>
 
     </div>
+
+
+
     <script>
       function initMap() {
         var mylocation = {lat: <?php echo $lat ?>, lng: <?php echo $lon ?>};
@@ -82,12 +85,13 @@ include_once("head.php");
   </div>
 </div>
 </div>
+
+<?php
+
+include_once("scripts.php");
+
+?>
   </body>
-  <?php
 
 
-  mysqli_close($connection);
-
-
-   ?>
 </html>
