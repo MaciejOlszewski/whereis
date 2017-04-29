@@ -33,6 +33,7 @@ function test_input($data) {
   return $data;
 }
  ?>
+ 
 <!DOCTYPE html>
 <html>
 
@@ -55,17 +56,8 @@ include_once("head.php");
       <input type="password" name="password" value="" placeholder="Password"><br>
       <input class="btn btn-lg btn-primary btn-block" type="submit" name="" value="Submit">
 
-      <?php
-
-
-
-        mysqli_close($connection);
-
-       ?>
 
     </form>
-
-
 
      </div>
 

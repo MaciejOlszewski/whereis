@@ -35,8 +35,7 @@ if (mysqli_num_rows($result) > 0) {
 include_once("head.php");
 ?>
 
-
-  <body>
+<body>
 
 <div class="container">
 
